@@ -1,13 +1,14 @@
-from nonebot import get_plugin_config, logger
 from yarl import URL
-
-from ..browser import get_browser
+from nonebot_plugin_htmlrender.browser import get_browser
+from nonebot import get_plugin_config, logger
 from ..config import Config
 
 config = get_plugin_config(Config)
 
 
-async def process_web_page(url: str) -> str | None:
+async def process_web_page(
+    url: str,
+) -> str | None:
     """处理网页内容
 
     Args:
@@ -30,6 +31,7 @@ async def process_web_page(url: str) -> str | None:
         logger.info(f"使用代理: {proxy}，{config.zssm_browser_proxy}")
         browser = await get_browser(proxy=proxy)
         page = await browser.new_page()
+        # page = await get_new_page()
 
         try:
             await page.goto(url, timeout=60000)

@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-zssm"
-version = "0.3.7"
+version = "0.3.7.beta.1"
 description = "这是什么？问一下！用 ai 来解释群友发送的「未知」内容"
 authors = [{ name = "djkcyl", email = "cyl@cyllive.cn" }]
 dependencies = [
@@ -10,6 +10,7 @@ dependencies = [
     "playwright>=1.51.0",
     "pillow>=11.0.0",
     "pymupdf>=1.25.5",
+    "nonebot-plugin-htmlrender>=0.6.8",
 ]
 requires-python = ">=3.10"
 readme = "README.md"

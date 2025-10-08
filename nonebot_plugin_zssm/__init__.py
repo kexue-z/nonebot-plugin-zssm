@@ -3,10 +3,10 @@ from importlib.metadata import version
 from nonebot import get_driver, get_plugin_config, require
 from nonebot.plugin import PluginMetadata, inherit_supported_adapters
 
-from .browser import install_browser
 from .config import Config
 
 require("nonebot_plugin_alconna")
+require("nonebot_plugin_htmlrender")
 
 
 try:
@@ -30,6 +30,6 @@ __plugin_meta__ = PluginMetadata(
 config = get_plugin_config(Config)
 if config.zssm_install_browser:
     driver = get_driver()
-    driver.on_startup(install_browser)
+    # driver.on_startup()
 
 from . import handle  # noqa: E402, F401
